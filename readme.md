@@ -22,7 +22,7 @@ mkdocs build
 ## Contribution
 Thank you for considering contributing to the Zest framework! Feel free to create a pull request.
 ### Contrubuting guide
-
+https://zestframework.github.io/contribution/
 
 ## License
 MIT
