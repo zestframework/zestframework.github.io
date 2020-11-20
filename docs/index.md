@@ -6,30 +6,30 @@
     **Error & Omissions Expected**
 
 ## **Index**
-* [Home](./basics/home/)
+* [Home](master/basics/home/)
 * The Basics
-	* [Home](./basics/home)
-    * [Installation](./basics/installation)
-    * [Routing](./basics/home)
-    * [Controller](./basics/controller)
-    * [Views](./basics/views)
-    * [Models](./basics/models)
-    * [Validations](./basics/validations)
-    * [Sessions](./basics/sessions)
-    * [Cookies](./basics/cookies)
-    * [Logging](./basics/logging)
+	* [Home](master/basics/home)
+    * [Installation](master/basics/installation)
+    * [Routing](master/basics/home)
+    * [Controller](master/basics/controller)
+    * [Views](master/basics/views)
+    * [Models](master/basics/models)
+    * [Validations](master/basics/validations)
+    * [Sessions](master/basics/sessions)
+    * [Cookies](master/basics/cookies)
+    * [Logging](master/basics/logging)
 
 * Frontend
-    * [Localization](./frontend/localization)
-    * [Input](./frontend/input)
+    * [Localization](master/frontend/localization)
+    * [Input](master/frontend/input)
 * Intermediate
 * Databases
 * Security
-    * [Hashing](./security/hashing)
-    * [Encrpytion](./security/security)
+    * [Hashing](master/security/hashing)
+    * [Encrpytion](master/security/security)
 * Components
-    * [Components](./components/components)
-* [Getting started with docker](./docker)
+    * [Components](master/components/components)
+* [Getting started with docker](master/docker)
 
 ## Old Documentation.
-[v2.0.3](../v2.0.3)
+[v2.0.3](v2.0.3)
