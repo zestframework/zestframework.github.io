@@ -42,7 +42,7 @@
     - Components:
       - Components: "master/components/components.md"
     - Getting started with docker: "master/docker.md"
-
+    - Contribution Guideline: "contribution.md"
     - Older docs:
       - v2.0.3:
         - Home: "v2.0.3/index.md"
