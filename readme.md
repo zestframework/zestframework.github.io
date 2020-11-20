@@ -20,4 +20,9 @@ mkdocs build
 ```
 
 ## Contribution
-You're welcome to make contribution, the guideline is same what for Zest Framework.
+Thank you for considering contributing to the Zest framework! Feel free to create a pull request.
+### Contrubuting guide
+
+
+## License
+MIT
