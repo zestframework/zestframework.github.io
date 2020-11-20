@@ -1,0 +1,1621 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../..">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
+    
+    
+      
+        <title>Auth - Zest Framework</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#auth-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Zest Framework" class="md-header-nav__button md-logo" aria-label="Zest Framework">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Zest Framework
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Auth
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Zest Framework" class="md-nav__button md-logo" aria-label="Zest Framework">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    Zest Framework
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Get Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    <label class="md-nav__link" for="nav-2">
+      The Basics
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="The Basics" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        The Basics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/home/" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/routing/" class="md-nav__link">
+      Routing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/controller/" class="md-nav__link">
+      Controller
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/views/" class="md-nav__link">
+      Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/models/" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/validations/" class="md-nav__link">
+      Validations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/sessions/" class="md-nav__link">
+      Sessions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/cookies/" class="md-nav__link">
+      Cookies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/basics/logging/" class="md-nav__link">
+      Logging
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    <label class="md-nav__link" for="nav-3">
+      Frontend
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Frontend" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Frontend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/frontend/localization/" class="md-nav__link">
+      Localization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/frontend/input/" class="md-nav__link">
+      Input
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    <label class="md-nav__link" for="nav-4">
+      Intermediate
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Intermediate" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Intermediate
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
+    <label class="md-nav__link" for="nav-5">
+      Databases
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Databases" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+    <label class="md-nav__link" for="nav-6">
+      Security
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Security" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/security/hashing/" class="md-nav__link">
+      Hashing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/security/encryption/" class="md-nav__link">
+      Encrpytion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+    <label class="md-nav__link" for="nav-7">
+      Components
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Components" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon"></span>
+        Components
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../master/components/components/" class="md-nav__link">
+      Components
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../master/docker/" class="md-nav__link">
+      Getting started with docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+    <label class="md-nav__link" for="nav-9">
+      Older docs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Older docs" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Older docs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-1" type="checkbox" id="nav-9-1" checked>
+    <label class="md-nav__link" for="nav-9-1">
+      v2.0.3
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="v2.0.3" data-md-level="2">
+      <label class="md-nav__title" for="nav-9-1">
+        <span class="md-nav__icon md-icon"></span>
+        v2.0.3
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../routing/" class="md-nav__link">
+      Routing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../controller/" class="md-nav__link">
+      Controllers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../views/" class="md-nav__link">
+      Views
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model/" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../validation/" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mail/" class="md-nav__link">
+      Sending Mail
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../database/" class="md-nav__link">
+      Database Manipulation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../session/" class="md-nav__link">
+      Session Handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cookie/" class="md-nav__link">
+      Cookie management
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cryptography/" class="md-nav__link">
+      Cryptography
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../maintenance/" class="md-nav__link">
+      Site Maintenance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../console/" class="md-nav__link">
+      Zest Console
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../component/" class="md-nav__link">
+      Components
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../di/" class="md-nav__link">
+      Dependencies Injection
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../logger/" class="md-nav__link">
+      Logger
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../input/" class="md-nav__link">
+      Input Handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../output/" class="md-nav__link">
+      Output Handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Auth
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Auth
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-database-structure" class="md-nav__link">
+    Default Database Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-create-simple-auth-app-in-zest-framework" class="md-nav__link">
+    Lets create simple auth app in Zest Framework
+  </a>
+  
+    <nav class="md-nav" aria-label="Lets create simple auth app in Zest Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-routes" class="md-nav__link">
+    Required routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-controller" class="md-nav__link">
+    Required Controller
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Controller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-controller" class="md-nav__link">
+    Home Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-controller" class="md-nav__link">
+    Account Controller
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view" class="md-nav__link">
+    View
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    Source code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../UPGRADE-2.0.2/" class="md-nav__link">
+      Upgrade Form 2.0.2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-database-structure" class="md-nav__link">
+    Default Database Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lets-create-simple-auth-app-in-zest-framework" class="md-nav__link">
+    Lets create simple auth app in Zest Framework
+  </a>
+  
+    <nav class="md-nav" aria-label="Lets create simple auth app in Zest Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-routes" class="md-nav__link">
+    Required routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-controller" class="md-nav__link">
+    Required Controller
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Controller">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home-controller" class="md-nav__link">
+    Home Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-controller" class="md-nav__link">
+    Account Controller
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view" class="md-nav__link">
+    View
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    Source code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <p>Auth Management library bundled with Zest Framework</p>
+<h1 id="auth-management">Auth Management<a class="headerlink" href="#auth-management" title="Permanent link">&para;</a></h1>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<p>There is configuration need for using Auth Management library in zest framework
+open - <code>Config/Auth.php</code>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x">    * Auth database table.</span>
+<span class="x">    *</span>
+<span class="x">    * @var string</span>
+<span class="x">    */</span>
+<span class="x">const AUTH_DB_TABLE = &#39;users&#39;;</span>
+<span class="x">/**</span>
+<span class="x">    * Auth database name.</span>
+<span class="x">    *</span>
+<span class="x">    * @var string</span>
+<span class="x">    */</span>
+<span class="x">const AUTH_DB_NAME = &#39;zestweb&#39;;</span>
+<span class="x">/**</span>
+<span class="x">    * Auth default verification link.</span>
+<span class="x">    *</span>
+<span class="x">    * @var string</span>
+<span class="x">    */</span>
+<span class="x">const VERIFICATION_LINK = &#39;/account/verify/&#39;;</span>
+<span class="x">/**</span>
+<span class="x">    * Auth default verification link.</span>
+<span class="x">    *</span>
+<span class="x">    * @var string</span>
+<span class="x">    */</span>
+<span class="x">const RESET_PASSWORD_LINK = &#39;/account/reset/password&#39;;</span>
+<span class="x">/**</span>
+<span class="x">    * is send email over smtp.</span>
+<span class="x">    *</span>
+<span class="x">    * @var string</span>
+<span class="x">    */</span>
+<span class="x">const IS_SMTP = false;</span>
+<span class="x">/**</span>
+<span class="x">    * is user need to verify email.</span>
+<span class="x">    *</span>
+<span class="x">    * @var string</span>
+<span class="x">    */</span>
+<span class="x">const IS_VERIFY_EMAIL = false;</span>
+<span class="x">/**</span>
+<span class="x">    * sticky password.</span>
+<span class="x">    *</span>
+<span class="x">    * @var string</span>
+<span class="x">    */</span>
+<span class="x">const STICKY_PASSWORD = false;</span>
+<span class="x">/**</span>
+<span class="x">    * Defaults auth errors msgs.</span>
+<span class="x">    *</span>
+<span class="x">    * @var array</span>
+<span class="x">    */</span>
+<span class="x">const AUTH_ERRORS = [</span>
+<span class="x">    &#39;password_confitm&#39;   =&gt; &#39;Password much be matched&#39;,</span>
+<span class="x">    &#39;username_not_exist&#39; =&gt; &#39;Sorry, the username does not exists&#39;,</span>
+<span class="x">    &#39;email_not_exist&#39;    =&gt; &#39;Sorry, the email does not exists&#39;,</span>
+<span class="x">    &#39;password_match&#39;     =&gt; &#39;Password does not matched&#39;,</span>
+<span class="x">    &#39;sticky_password&#39;    =&gt; &#39;Password much be greate then 6 much contain lowercase,uppercase and special character&#39;,</span>
+<span class="x">    &#39;account_verify&#39;     =&gt; &#39;You should verify your account in order to login, another verification is sended to your email addresss&#39;,</span>
+<span class="x">    &#39;already_login&#39;      =&gt; &#39;Account already loggedin&#39;,</span>
+<span class="x">    &#39;need_login&#39;         =&gt; &#39;You need login to your account in order to update profile&#39;,</span>
+<span class="x">    &#39;token&#39;              =&gt; &#39;Invilid request&#39;,</span>
+<span class="x">];</span>
+<span class="x">/**</span>
+<span class="x">    * Defaults auth success msgs.</span>
+<span class="x">    *</span>
+<span class="x">    * @var array</span>
+<span class="x">    */</span>
+<span class="x">const SUCCESS = [</span>
+<span class="x">    &#39;signin&#39;          =&gt; &#39;Login successfully&#39;,</span>
+<span class="x">    &#39;signup&#39;          =&gt; &#39;Your account has been created successfully&#39;,</span>
+<span class="x">    &#39;update&#39;          =&gt; &#39;Your account has been updated&#39;,</span>
+<span class="x">    &#39;update_password&#39; =&gt; &#39;Your password has been updated&#39;,</span>
+<span class="x">    &#39;verified&#39;        =&gt; &#39;Your account verified login now to enjoy in our services&#39;,</span>
+<span class="x">    &#39;reset&#39;           =&gt; &#39;Password reset request has been sended to your email&#39;,</span>
+<span class="x">];</span>
+<span class="x">/**</span>
+<span class="x">    * Defaults auth email subjects.</span>
+<span class="x">    *</span>
+<span class="x">    * @var array</span>
+<span class="x">    */</span>
+<span class="x">const AUTH_SUBJECTS = [</span>
+<span class="x">    &#39;need_verify&#39; =&gt; &#39;Account verification required&#39;,</span>
+<span class="x">    &#39;verified&#39;    =&gt; &#39;Account verified&#39;,</span>
+<span class="x">    &#39;reset&#39;       =&gt; &#39;Password reset request&#39;,</span>
+<span class="x">];</span>
+<span class="x">/**</span>
+<span class="x">    * Defaults auth email bodies.</span>
+<span class="x">    *</span>
+<span class="x">    * @var array</span>
+<span class="x">    */</span>
+<span class="x">const AUTH_MAIL_BODIES = [</span>
+<span class="x">    &#39;need_verify&#39; =&gt; &#39;Dear :email your account has been created you need verify your account&lt;br&gt;&lt;a href=&quot;:link&quot;&gt;verify my account&lt;/a&gt;&lt;br&gt;Click above link if you unable to open copy paste below link &lt;br&gt;:link&#39;,</span>
+<span class="x">    &#39;reset&#39;       =&gt; &#39;Dear :email We recieve password reset request form your account reset your password now&lt;br&gt;&lt;a href=&quot;:link&quot;&gt;reset my password&lt;/a&gt;&lt;br&gt;Click above link if you unable to open copy paste below link &lt;br&gt;:link&#39;,</span>
+<span class="x">    &#39;verified&#39;    =&gt; &#39;Dear :email your account verified login now to enjoy in our services&#39;,</span>
+<span class="x">];</span>
+</code></pre></div>
+Change this configuration according to your requirement.</p>
+<h2 id="default-database-structure">Default Database Structure<a class="headerlink" href="#default-database-structure" title="Permanent link">&para;</a></h2>
+<p>required fields
+- username
+- email
+- password
+- salts
+- token
+- resetToken (for allow reset password)</p>
+<h2 id="lets-create-simple-auth-app-in-zest-framework">Lets create simple auth app in Zest Framework<a class="headerlink" href="#lets-create-simple-auth-app-in-zest-framework" title="Permanent link">&para;</a></h2>
+<h3 id="required-routes">Required routes<a class="headerlink" href="#required-routes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="x">// Add the routes</span>
+<span class="x">//create url: yoursite.com</span>
+<span class="x">$router-&gt;get(&#39;&#39;,&quot;Home@index&quot;);</span>
+<span class="x">//Account</span>
+<span class="x">//create url: yoursite.com/acount/login</span>
+<span class="x">$router-&gt;get(&#39;account/login&#39;,&quot;Account@login&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/login/action</span>
+<span class="x">$router-&gt;post(&#39;account/login/action&#39;,&quot;Account@loginProcess&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/signup</span>
+<span class="x">$router-&gt;get(&#39;account/signup&#39;, &quot;Account@signup&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/signup/action</span>
+<span class="x">$router-&gt;post(&#39;account/signup/action&#39;, &quot;Account@signupProcess&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/logout</span>
+<span class="x">$router-&gt;get(&#39;account/logout&#39;, &quot;Account@logout&quot;);</span>
+<span class="x">//create url: yoursite.com/@username</span>
+<span class="x">$router-&gt;get(&#39;{username:@([a-zA-Z0-9])+}&#39;, &quot;Account@profileView&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/profile/edit</span>
+<span class="x">$router-&gt;get(&#39;account/profile/edit&#39;, &quot;Account@profileEdit&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/update/action</span>
+<span class="x">$router-&gt;post(&#39;account/update/action&#39;, &quot;Account@profileUpdate&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/update/bio/action</span>
+<span class="x">$router-&gt;post(&#39;account/update/bio/action&#39;, &quot;Account@profileBioUpdate&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/update/password/action</span>
+<span class="x">$router-&gt;post(&#39;account/update/password/action&#39;, &quot;Account@profilePasswordUpdate&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/reset</span>
+<span class="x">$router-&gt;get(&#39;account/reset&#39;, &quot;Account@reset&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/reset/action</span>
+<span class="x">$router-&gt;post(&#39;account/reset/action&#39;,&quot;Account@resetProcess&quot;);</span>
+<span class="x">//create url: yoursite.com/acount/reset/password/$token</span>
+<span class="x">$router-&gt;get(&#39;account/reset/password/{token:[A-Za-z0-9]+}&#39;, &quot;Account@resetPassword&quot;);</span>
+<span class="x">//create url: yoursite.com/account/reset/password-password/process</span>
+<span class="x">$router-&gt;post(&#39;account/reset/password-password/process&#39;, &quot;Account@resetPasswordProcess&quot;);</span>
+</code></pre></div>
+
+<h3 id="required-controller">Required Controller<a class="headerlink" href="#required-controller" title="Permanent link">&para;</a></h3>
+<h4 id="home-controller">Home Controller<a class="headerlink" href="#home-controller" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
+<span class="c1">//for using View</span>
+<span class="k">use</span> <span class="nx">Zest\View\View</span><span class="p">;</span>
+<span class="c1">//for using auth management</span>
+<span class="k">use</span> <span class="nx">Zest\Auth\Auth</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Zest\Auth\User</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Home</span> <span class="k">extends</span> <span class="nx">\Zest\Controller\Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Show the index page.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="c1">// in Auth user class there is method isLogin to check is user login or not</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isLogin</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// in Auth user class there is method loginUser that return the login user array</span>
+            <span class="nv">$args</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">loginUser</span><span class="p">();</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">View</span><span class="p">(</span><span class="s1">&#39;account/profile&#39;</span><span class="p">,</span><span class="nv">$args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;account/signup&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="account-controller">Account Controller<a class="headerlink" href="#account-controller" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
+
+<span class="c1">//for using View</span>
+<span class="k">use</span> <span class="nx">Zest\View\View</span><span class="p">;</span>
+<span class="c1">//for using auth</span>
+<span class="k">use</span> <span class="nx">Zest\Auth\Auth</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Zest\Auth\User</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Account</span> <span class="k">extends</span> <span class="nx">\Zest\Controller\Controller</span>
+<span class="p">{</span>
+    <span class="c1">// Check whether the user is logged in.</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">isLogin</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="c1">// In the `Auth` user class there is a method, `isLogin`, which checks whether the user is logged in.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isLogin</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// Redirect() is built-in function in Zest framework for redirecting to another page.</span>
+            <span class="nx">redirect</span><span class="p">(</span><span class="nx">site_base_url</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;account/profile/edit&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// User login form</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">login</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">isLogin</span><span class="p">();</span>
+        <span class="c1">// Loading the view form</span>
+        <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s2">&quot;account/login&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// Process the login request/action</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">loginProcess</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">isLogin</span><span class="p">();</span>
+        <span class="c1">// Getting the user value</span>
+        <span class="c1">// Using the built-in input function</span>
+        <span class="c1">// Escape function cleans the input for escaping</span>
+        <span class="nv">$username</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">));</span>
+        <span class="nv">$password</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">));</span>
+        <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+        <span class="c1">//Call the auth signin method accpet two arguments</span>
+        <span class="c1">// username and password</span>
+        <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">signin</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">signin</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span><span class="nv">$password</span><span class="p">);</span>
+        <span class="c1">//check if there is error</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">fail</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// if yes, get the error</span>
+            <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+            <span class="c1">//loop throught the error</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$error</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$error</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="nv">$error</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">//if no error print 1 on screen means true</span>
+            <span class="k">echo</span> <span class="s1">&#39;1&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// Signup form</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">signup</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">isLogin</span><span class="p">();</span>
+        <span class="c1">//Load the signup form</span>
+        <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s2">&quot;account/signup&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">signupProcess</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">isLogin</span><span class="p">();</span>
+        <span class="c1">//Getting the user value</span>
+        <span class="c1">// using builtin input function</span>
+        <span class="c1">//escape function clean the input for escaping</span>
+        <span class="nv">$name</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">));</span>
+        <span class="nv">$username</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">));</span>
+        <span class="nv">$email</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">));</span>
+        <span class="nv">$password</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">));</span>
+        <span class="nv">$confirm</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;confirm&#39;</span><span class="p">));</span>
+        <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+        <span class="c1">//Signup method accpet the three required arguments</span>
+        <span class="c1">// $username,$email and password</span>
+        <span class="c1">//Fourth array argument is optional you can provide many fields in fourth argument if want</span>
+        <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">signup</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">signup</span><span class="p">(</span><span class="nv">$username</span><span class="p">,</span><span class="nv">$email</span><span class="p">,</span><span class="nv">$password</span><span class="p">,[</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span> <span class="s1">&#39;passConfirm&#39;</span> <span class="o">=&gt;</span> <span class="nv">$confirm</span><span class="p">,</span><span class="s1">&#39;role&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;normal&#39;</span><span class="p">,</span><span class="s1">&#39;ip&#39;</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="k">new</span> <span class="nx">\Zest\UserInfo\UserInfo</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">ip</span><span class="p">()]);</span>
+       <span class="c1">//check if there is error</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">fail</span><span class="p">())</span> <span class="p">{</span>
+            <span class="c1">// if yes, get the error</span>
+            <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+            <span class="c1">//loop throught the error</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$error</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$error</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="nv">$error</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// If no error print successfull message</span>
+            <span class="k">echo</span> <span class="s1">&#39;Your account has been created login to enjoy in our services&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// Logout the users</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">logout</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+        <span class="c1">// Call the logout method in auth class</span>
+        <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">logout</span><span class="p">();</span>
+        <span class="c1">//redirect the user to login page back</span>
+        <span class="nx">redirect</span><span class="p">(</span><span class="nx">site_base_url</span><span class="p">()</span><span class="o">.</span><span class="s2">&quot;account/login&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">profileEdit</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isLogin</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$args</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">loginUser</span><span class="p">();</span>
+            <span class="c1">//profile edit form</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">View</span><span class="p">(</span><span class="s1">&#39;account/profile&#39;</span><span class="p">,</span><span class="nv">$args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;errors/404&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">profileUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="nv">$error</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+        <span class="nv">$name</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">));</span>
+        <span class="nv">$username</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">));</span>
+        <span class="nv">$email</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">));</span>
+        <span class="c1">//check if username is already exists</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isUsername</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$error</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+            <span class="k">echo</span> <span class="s2">&quot;Sorry, </span><span class="si">{</span><span class="nv">$username</span><span class="si">}</span><span class="s2"> username already exists, try another&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">//check if email is already exists</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isEmail</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$error</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+            <span class="k">echo</span> <span class="s2">&quot;Sorry, </span><span class="si">{</span><span class="nv">$email</span><span class="si">}</span><span class="s2"> email already exists, try another&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$error</span> <span class="o">!==</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+            <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">loginUser</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">];</span>
+            <span class="c1">//update the user details</span>
+            <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">([</span><span class="s1">&#39;name&#39;</span><span class="o">=&gt;</span><span class="nv">$name</span><span class="p">,</span><span class="s1">&#39;username&#39;</span><span class="o">=&gt;</span><span class="nv">$username</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="o">=&gt;</span><span class="nv">$email</span><span class="p">],</span><span class="nv">$id</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">fail</span><span class="p">())</span> <span class="p">{</span>
+                <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+                <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$error</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$error</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="nv">$error</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">echo</span> <span class="s1">&#39;Your account has been updated successfully&#39;</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">profileBioUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="nv">$bio</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;bio&#39;</span><span class="p">));</span>
+        <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+        <span class="c1">//get id of login user</span>
+        <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">loginUser</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">];</span>
+        <span class="c1">//update bio of user</span>
+        <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">([</span><span class="s1">&#39;bio&#39;</span><span class="o">=&gt;</span><span class="nv">$bio</span><span class="p">],</span><span class="nv">$id</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">fail</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$error</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$error</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="nv">$error</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s1">&#39;Your account bio has been updated successfully&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">profilePasswordUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="nv">$password</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">));</span>
+        <span class="nv">$confirm</span> <span class="o">=</span> <span class="nx">escape</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;confirm&#39;</span><span class="p">));</span>
+        <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+        <span class="c1">//get id of login user</span>
+        <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">loginUser</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">];</span>
+        <span class="c1">//Update the password</span>
+        <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">updatePassword</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span><span class="nv">$confirm</span><span class="p">,</span><span class="nv">$id</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">fail</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$error</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$error</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="nv">$error</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s1">&#39;Your account password has been updated successfully&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">profileView</span><span class="p">()</span>
+    <span class="p">{</span>
+       <span class="nv">$username</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">route_params</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">];</span>
+       <span class="nv">$username</span> <span class="o">=</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nv">$username</span><span class="p">);</span>
+       <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+       <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isUsername</span><span class="p">(</span><span class="nv">$username</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$args</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">getByWhere</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span><span class="nv">$username</span><span class="p">);</span>
+            <span class="c1">//profile view</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;account/profileView&#39;</span><span class="p">,</span><span class="nv">$args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+       <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;errors/404&#39;</span><span class="p">);</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">//Reset password form where user enter his email</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">reset</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Load the reset form</span>
+        <span class="c1">//Create your form that should email and one buttom</span>
+        <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s2">&quot;account/reset&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">//Reset password process</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">resetProcess</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+        <span class="c1">// reset the password</span>
+        <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">reset</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">reset</span><span class="p">(</span><span class="nx">input</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">fail</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$error</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$error</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="nv">$error</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s1">&#39;Your Password reset request has been recieved check your email&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">resetPassword</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$token</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">route_params</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">];</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="c1">//check if reset token is exists</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$user</span><span class="o">-&gt;</span><span class="na">isResetToken</span><span class="p">(</span><span class="nv">$token</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="p">];</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s2">&quot;account/reset_password&quot;</span><span class="p">,</span><span class="nv">$args</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">View</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s2">&quot;errors/404&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">resetPasswordProcess</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$password</span> <span class="o">=</span> <span class="nx">input</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">);</span>
+        <span class="nv">$confirm</span> <span class="o">=</span>  <span class="nx">input</span><span class="p">(</span><span class="s1">&#39;confirm&#39;</span><span class="p">);</span>
+        <span class="nv">$token</span> <span class="o">=</span> <span class="nx">input</span><span class="p">(</span><span class="s1">&#39;token&#39;</span><span class="p">);</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">;</span>
+        <span class="c1">//get the user id by resetToken</span>
+        <span class="nv">$id</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">getByWhere</span><span class="p">(</span><span class="s1">&#39;resetToken&#39;</span><span class="p">,</span><span class="nv">$token</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">];</span>
+        <span class="nv">$auth</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Auth</span><span class="p">;</span>
+        <span class="c1">//update the user password</span>
+        <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">updatePassword</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span><span class="nv">$confirm</span><span class="p">,</span><span class="nv">$id</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">fail</span><span class="p">())</span> <span class="p">{</span>
+            <span class="nv">$errors</span> <span class="o">=</span> <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$error</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$error</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="nv">$value</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">echo</span> <span class="nv">$error</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$auth</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">([</span><span class="s1">&#39;resetToken&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;NULL&#39;</span><span class="p">],</span><span class="nv">$id</span><span class="p">);</span>
+            <span class="k">echo</span> <span class="s2">&quot;Password update successfully &quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>In the account controller we called method form auth management</p>
+<h3 id="view">View<a class="headerlink" href="#view" title="Permanent link">&para;</a></h3>
+<p>Create view yourself or download files form here
+<a href="https://github.com/Lablnet/Zest-Auth-App/tree/master/App/Views">https://github.com/Lablnet/Zest-Auth-App/tree/master/App/Views</a>
+and download required css/js or image files form here
+<a href="https://github.com/Lablnet/Zest-Auth-App/tree/master/Public">https://github.com/Lablnet/Zest-Auth-App/tree/master/Public</a>
+the folder structure should be same.</p>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>The source code of this available in github feel free to download and contribute
+<a href="https://github.com/Lablnet/Zest-Auth-App">https://github.com/Lablnet/Zest-Auth-App</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../output/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Output Handling
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../UPGRADE-2.0.2/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Upgrade Form 2.0.2
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.7e0ee788.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>
