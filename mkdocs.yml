@@ -1,52 +1,101 @@
-site_name: 'zestframework'
-theme:
-  name: null
-  custom_dir: theme/material
+  site_name: 'Zest Framework'
+  theme:
+    name: null
+    custom_dir: theme/material
 
-  # 404 page
-  static_templates:
-    - 404.html
+    # 404 page
+    static_templates:
+      - 404.html
 
-  # Default values, taken from mkdocs_theme.yml
-  language: en
-  font:
-    text: Roboto
-    code: Roboto Mono
-  icon:
-    logo: logo
+    # Default values, taken from mkdocs_theme.yml
+    language: en
+    font:
+      text: Roboto
+      code: Roboto Mono
+    icon:
+      logo: logo
 
-nav:
-  - Docs:
-    - Index: "index.md"
+  nav:
+    - Get Started: "index.md"
+    - The Basics:
+      - Home: "master/basics/home.md"
+      - Installation: "master/basics/installation.md"
+      - Routing: "master/basics/routing.md"
+      - Controller: "master/basics/controller.md"
+      - Views: "master/basics/views.md"
+      - Models: "master/basics/models.md"
+      - Validations: "master/basics/validations.md"
+      - Sessions: "master/basics/sessions.md"
+      - Cookies: "master/basics/cookies.md"
+      - Logging: "master/basics/logging.md"
+    - Frontend:
+      - Localization: "master/frontend/localization.md"
+      - Input: "master/frontend/input.md"
+    - Intermediate:
+      - Index: "index.md"
+    - Databases:
+      - Index: "index.md"
+    - Security:
+      - Hashing: "master/security/hashing.md"
+      - Encrpytion: "master/security/encryption.md"
+    
+    - Components:
+      - Components: "master/components/components.md"
+    - Getting started with docker: "master/docker.md"
 
-# Extensions
-markdown_extensions:
-  - markdown.extensions.admonition
-  - markdown.extensions.codehilite:
-      guess_lang: false
-      linenums: true
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  - markdown.extensions.meta
-  - markdown.extensions.toc:
-      permalink: true
-  - pymdownx.arithmatex
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde
+    - Older docs:
+      - v2.0.3:
+        - Home: "v2.0.3/index.md"
+        - Installation: "v2.0.3/installation.md"
+        - Configuration: "v2.0.3/configuration.md"
+        - Routing: "v2.0.3/routing.md"
+        - Controllers: "v2.0.3/controller.md"
+        - Views: "v2.0.3/views.md"
+        - Models: "v2.0.3/model.md"
+        - Validation: "v2.0.3/validation.md"
+        - Sending Mail: "v2.0.3/mail.md"
+        - Database Manipulation: "v2.0.3/database.md"
+        - Session Handling: "v2.0.3/session.md"
+        - Cookie management: "v2.0.3/cookie.md"
+        - Cryptography: "v2.0.3/cryptography.md"
+        - Site Maintenance: "v2.0.3/maintenance.md"
+        - Zest Console: "v2.0.3/console.md"
+        - Components: "v2.0.3/component.md"
+        - Dependencies Injection: "v2.0.3/di.md" 
+        - Logger: "v2.0.3/logger.md"
+        - Input Handling: "v2.0.3/input.md"
+        - Output Handling: "v2.0.3/output.md"
+        - Auth: "v2.0.3/auth.md"
+        - Upgrade Form 2.0.2: "v2.0.3/UPGRADE-2.0.2.md"
 
-plugins:
-  - search
+  # Extensions
+  markdown_extensions:
+    - markdown.extensions.admonition
+    - markdown.extensions.codehilite:
+        guess_lang: false
+        linenums: true
+    - markdown.extensions.def_list
+    - markdown.extensions.footnotes
+    - markdown.extensions.meta
+    - markdown.extensions.toc:
+        permalink: true
+    - pymdownx.arithmatex
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.emoji:
+        emoji_generator: !!python/name:pymdownx.emoji.to_svg
+    - pymdownx.inlinehilite
+    - pymdownx.keys
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.tilde
+
+  plugins:
+    - search
